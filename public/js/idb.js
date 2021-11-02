@@ -50,7 +50,6 @@ function uploadBudgetEntry() {
           const transaction = db.transaction(['new_budget_item'], 'readwrite');
           const budgetObjectStore = transaction.objectStore('new_budget_item');
           budgetObjectStore.clear();
-          location.reload()
           alert("Update: All pending offline transactions have been posted please reload the page");
         })
         .catch(err => {
