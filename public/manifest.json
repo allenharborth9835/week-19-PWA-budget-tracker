@@ -1,4 +1,6 @@
 {
+  "name": "The Budget Tracker",
+  "short_name": "BudgetTrack",
   "icons": [
     {
       "src": "icons/icon-512x512.png",
@@ -41,8 +43,6 @@
       "type": "image/png"
     }
   ],
-  "name": "The Budget Tracker",
-  "short_name": "BudgetTrack",
   "orientation": "potrait",
   "display": "standalone",
   "start_url": "/",
