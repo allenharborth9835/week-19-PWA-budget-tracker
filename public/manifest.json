@@ -45,7 +45,7 @@
   ],
   "orientation": "potrait",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "./index.html",
   "description": "A app to budget your finances",
   "background_color": "#6666ff",
   "theme_color": "#ffffff"
