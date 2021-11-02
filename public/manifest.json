@@ -45,7 +45,7 @@
   "short_name": "BudgetTrack",
   "orientation": "potrait",
   "display": "standalone",
-  "start_url": "/index.html",
+  "start_url": "/",
   "description": "A app to budget your finances",
   "background_color": "#6666ff",
   "theme_color": "#ffffff"
