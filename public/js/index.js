@@ -151,3 +151,33 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+function uploadBudgetEntry(){
+  const transaction = db.transaction(['new_budget_entry'], 'readwrite');
+  const budgetObjectStore = transaction.objectStore('new_budget_entry');
+  const getAll = budgetObjectStore.getAll();
+
+  getAll.onsuccess = function(){
+    if(getAll.result.length> 0){
+      fetch('/api/transaction', {
+        method: 'POST',
+        body: JSON.stringify(getAll.result),
+        headers: {
+          Accept: 'application/json, text/plain, */*',
+          'Conent-Type': 'application/json'
+        }
+      })
+        .then(response => response.json())
+        .then(serverResponse => {
+          if(serverResponse.message){
+            throw new Error(serverResponse);
+          }
+          budgetObjectStore.clear()
+          alert("updated online")
+        })
+        .catch(err => {
+          console.loglog(err);
+        });
+      } 
+    }
+  }
