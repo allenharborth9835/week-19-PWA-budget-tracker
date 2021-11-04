@@ -2,6 +2,7 @@ const APP_PREFIX = 'BudgetTracker-';
 const VERSION = 'version_01';
 const CACHE_NAME = APP_PREFIX + VERSION;
 
+//files to be cached
 const FILES_TO_CACHE = [
   "/",
   "/index.html",
@@ -19,6 +20,7 @@ const FILES_TO_CACHE = [
   "/manifest.json"
 ];
 
+//installs files
 self.addEventListener('install', function (e) {
   e.waitUntil(
     caches.open(CACHE_NAME).then(function (cache) {
@@ -28,6 +30,7 @@ self.addEventListener('install', function (e) {
   );
 });
 
+//if version is the same it will keep files if not it will delete files
 self.addEventListener('activate', function(e) {
   e.waitUntil(
     caches.keys().then(function(keyList) {
@@ -48,6 +51,7 @@ self.addEventListener('activate', function(e) {
   );
 });
 
+//fetches files if files are alraedy installed if not it will install  files
 self.addEventListener('fetch', function (e) {
   console.log('fetch request : ' + e.request.url)
   e.respondWith(
@@ -59,9 +63,6 @@ self.addEventListener('fetch', function (e) {
         console.log('file is not cached, fetching : ' + e.request.url)
         return fetch(e.request)
       }
-
-      // You can omit if/else for console.log & put one line below like this too.
-      // return request || fetch(e.request)
     })
   )
 })

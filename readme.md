@@ -2,7 +2,7 @@
 <img src="https://img.shields.io/badge/license-Unlicensed-blue" alt="Unlicensed">   
 
 ## Description
-
+In this assignment we had to take a regular website and make it a PWA with full offline capability. the code for the website was given to us and we had to add idb.js to give the website the ability to submit an input offline through indexDB, a data base stored in the browser. We also had to setup a service worker to download the files of the website so that the website will load even if the user is offline. the last thing had to do was create a manifest file amd link it in the html to give the ability for the user to download an app through the web browser. 
 
 ## Table of Contents
   * [Installation](#installation)
