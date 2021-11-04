@@ -1,4 +1,4 @@
-# week-8-NoSQL-Social-Network-API
+# week-19-PWA-budget-tracker
 <img src="https://img.shields.io/badge/license-Unlicensed-blue" alt="Unlicensed">   
 
 ## Description
